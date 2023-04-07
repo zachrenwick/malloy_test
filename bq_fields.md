@@ -21,23 +21,17 @@ Use the dashboard below to compare a bunch of names. Change the filter to select
 query: bq_fields -> missing_field_descriptions
 ```
 
-<!-- malloy-query  
-  name="Field Dashboard Example"
-  model="bq_fields.malloy"
--->
-```malloy
-query: bq_fields -> bq_field2_dashboard
-```
-
-<!-- malloy-query  
-  name="Field Dashboard Example2"
-  model="bq_fields.malloy"
--->
-```malloy
-query: bq_fields -> bq_field1_dashboard
-```
-
 ## About Malloy Composer
+
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
+^above mermaid test
+
 
 Composer is implemented using Malloy, DuckDB and WASM and runs completely
 in your browser.  Javascript code is compled from here:
