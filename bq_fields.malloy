@@ -1,25 +1,26 @@
-source: bq_fields is table('duckdb:data/output_ecommerce_fields.csv') {
+// duckdb sources
+source: bq_fields is table('duckdb:data/output_ecommerce_fields.csv'){
     measure: field_count is count(),
            fields_with_descriptions is count() { where: description != '' },
            description_coverage_pct is fields_with_descriptions / field_count * 100
-}
-query: bq_fields -> {
+
+query: bq_fields is {
   aggregate: field_count
 }
 
-query: by_table_bar_chart is bq_fields -> {
+query: by_table_bar_chart is {
   group_by: table_name
   aggregate: field_count
 }
 
-query: coverage_by_table_bar_chart is bq_fields -> {
+query: coverage_by_table_bar_chart is {
   group_by: table_name
   aggregate: description_coverage_pct
 }
 
 
 
-query: bq_field1_dashboard is bq_fields -> {
+query: bq_field1_dashboard is  {
   aggregate: field_count, fields_with_descriptions, description_coverage_pct
   nest: by_table is {
     group_by: table_name
@@ -31,7 +32,7 @@ query: bq_field1_dashboard is bq_fields -> {
   }
 }
 
-query: bq_field2_dashboard is bq_fields -> {
+query: bq_field2_dashboard is {
   aggregate: field_count, fields_with_descriptions, description_coverage_pct
   nest: by_table is {
     group_by: table_name
@@ -40,5 +41,6 @@ query: bq_field2_dashboard is bq_fields -> {
     group_by: column_name // field_name is bq_fields.field_name
     aggregate: description_coverage_pct
   }
+}
 }
 }
