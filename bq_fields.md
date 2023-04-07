@@ -8,16 +8,33 @@ This data comes from BQ. Descriptions by field/column.
 See the [Malloy source code](https://github.com/zachrenwick/malloy_test/) 
 
 
-## Explore Names
+## Explore BigQuery Field Descriptions
 
 Use the dashboard below to compare a bunch of names. Change the filter to select different names.
 
+
 <!-- malloy-query  
-  name="Basic Query"
+  name="Missing Description Columns"
   model="bq_fields.malloy"
 -->
 ```malloy
-query: bq_fields -> coverage_by_table_bar_chart
+query: bq_fields -> missing_field_descriptions
+```
+
+<!-- malloy-query  
+  name="Field Dashboard Example"
+  model="bq_fields.malloy"
+-->
+```malloy
+query: bq_fields -> bq_field2_dashboard
+```
+
+<!-- malloy-query  
+  name="Field Dashboard Example2"
+  model="bq_fields.malloy"
+-->
+```malloy
+query: bq_fields -> bq_field1_dashboard
 ```
 
 ## About Malloy Composer

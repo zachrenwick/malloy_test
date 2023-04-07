@@ -43,4 +43,12 @@ query: bq_field2_dashboard is {
   }
 }
 }
+
+
+query: missing_field_descriptions is {
+    project: table_name, column_name, field_path, description
+    order_by: column_name
+    where: description = null
+}
+
 }
