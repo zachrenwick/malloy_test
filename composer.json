@@ -1,0 +1,11 @@
+{
+    "readme": "readme.md",
+    "title": "BQ Fields",
+    "models": [
+      {
+        "id": "bq_fields",
+        "path": "bq_fields.malloy",
+        "tables": ["data/output_ecommerce_fields.csv"]
+      }
+    ]
+  }
