@@ -30,7 +30,6 @@ See column description coverage by table and struct breakdown. Which tables have
 -->
 ```malloy
   query: bq_fields -> bq_field2_dashboard
-  }
 ```
 
 

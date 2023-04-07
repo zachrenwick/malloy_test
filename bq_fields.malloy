@@ -1,4 +1,3 @@
-// duckdb sources
 source: bq_fields is table('duckdb:data/output_ecommerce_fields.csv'){
     measure: field_count is count(),
            fields_with_descriptions is count() { where: description != '' },
@@ -49,6 +48,5 @@ query: missing_field_descriptions is {
     project: table_name, column_name, field_path, description
     order_by: column_name
     where: description = null
-}
-
+}  
 }
