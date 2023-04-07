@@ -8,18 +8,6 @@ This data comes from BQ. Descriptions by field/column.
 See the [Malloy source code](https://github.com/zachrenwick/malloy_test/) 
 
 
-## Explore BigQuery Field Descriptions
-
-Show missing descriptions below
-
-<!-- malloy-query  
-  name="Missing Description Columns"
-  model="bq_fields.malloy"
--->
-```malloy
-query: bq_fields -> missing_field_descriptions
-```
-
 ## BigQuery Field Dashboard
 
 See column description coverage by table and struct breakdown. Which tables have the best coverage of descriptions filled?
@@ -30,6 +18,24 @@ See column description coverage by table and struct breakdown. Which tables have
 -->
 ```malloy
   query: bq_fields -> bq_field2_dashboard
+```
+
+## Explore Other Queries
+
+<!-- malloy-query  
+  name="Query one"
+  model="bq_fields.malloy"
+-->
+```malloy
+  query: bq_fields -> missing_field_descriptions
+```
+
+<!-- malloy-query  
+  name="Field Dashboard Two"
+  model="bq_fields.malloy"
+-->
+```malloy
+  query: bq_fields -> bq_field1_dashboard
 ```
 
 
