@@ -1,5 +1,5 @@
 {
-    "readme": "readme.md",
+    "readme": "bq_fields.md",
     "title": "BQ Fields",
     "models": [
       {
