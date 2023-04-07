@@ -18,6 +18,19 @@ query: coverage_by_table_bar_chart is {
 }
 
 
+query: by_table_dashboard is  {
+  aggregate: field_count, fields_with_descriptions, description_coverage_pct
+  nest: by_table is {
+    group_by: table_name
+    aggregate: field_count, fields_with_descriptions, description_coverage_pct
+  }
+  nest: by_struct is {
+    group_by: column_name // field_name is bq_fields.field_name
+    aggregate: description_coverage_pct
+  }
+}
+
+
 
 query: bq_field1_dashboard is  {
   aggregate: field_count, fields_with_descriptions, description_coverage_pct
@@ -25,7 +38,7 @@ query: bq_field1_dashboard is  {
     group_by: table_name
     aggregate: field_count, fields_with_descriptions, description_coverage_pct
   }
-  nest: by_column is {
+  nest: by_struct is {
     group_by: column_name // field_name is bq_fields.field_name
     aggregate: description_coverage_pct
   }
@@ -43,10 +56,24 @@ query: bq_field2_dashboard is {
 }
 }
 
+query: bq_field3_dashboard is {
+  aggregate: field_count, fields_with_descriptions, description_coverage_pct
+  nest: by_table is {
+    group_by: table_name
+    aggregate: field_count, fields_with_descriptions, description_coverage_pct
+    nest: by_struct_bar_chart is {
+    group_by: column_name // field_name is bq_fields.field_name
+    aggregate: description_coverage_pct
+  }
+}
+}
+
+
 
 query: missing_field_descriptions is {
     project: table_name, column_name, field_path, description
     order_by: column_name
     where: description = null
+    limit: 35
 }  
 }

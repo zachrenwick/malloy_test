@@ -38,6 +38,13 @@ See column description coverage by table and struct breakdown. Which tables have
   query: bq_fields -> bq_field1_dashboard
 ```
 
+<!-- malloy-query  
+  name="By Table Dashboard"
+  model="bq_fields.malloy"
+-->
+```malloy
+  query: bq_fields -> by_table_dashboard
+```
 
 ## About Malloy Composer
 Composer is implemented using Malloy, DuckDB and WASM and runs completely
