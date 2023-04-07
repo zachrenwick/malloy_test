@@ -10,8 +10,7 @@ See the [Malloy source code](https://github.com/zachrenwick/malloy_test/)
 
 ## Explore BigQuery Field Descriptions
 
-Use the dashboard below to compare a bunch of names. Change the filter to select different names.
-
+Show missing descriptions below
 
 <!-- malloy-query  
   name="Missing Description Columns"
@@ -21,18 +20,21 @@ Use the dashboard below to compare a bunch of names. Change the filter to select
 query: bq_fields -> missing_field_descriptions
 ```
 
-## About Malloy Composer
+## BigQuery Field Dashboard
 
-```mermaid
-  graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
+See column description coverage by table and struct breakdown. Which tables have the best coverage of descriptions filled?
+
+<!-- malloy-query  
+  name="Field Dashboard: See column description coverage by table and struct breakdown"
+  model="bq_fields.malloy"
+-->
+```malloy
+  query: bq_fields -> bq_field2_dashboard
+  }
 ```
-^above mermaid test
 
 
+## About Malloy Composer
 Composer is implemented using Malloy, DuckDB and WASM and runs completely
 in your browser.  Javascript code is compled from here:
 
