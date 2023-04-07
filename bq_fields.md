@@ -17,7 +17,7 @@ Use the dashboard below to compare a bunch of names. Change the filter to select
   model="bq_fields.malloy"
 -->
 ```malloy
-query: by_table_bar_chart -> bq_fields
+query: bq_fields -> coverage_by_table_bar_chart
 ```
 
 ## About Malloy Composer
